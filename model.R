@@ -1,6 +1,8 @@
 install.packages("tidyverse")
 library(tidyverse)
 draw<-tibble(id=1:128,p1=NA,p2=NA,winner=200:327,complete=0)
+draw <- read_csv("draw_short.csv")
+prob_matrix <- read_csv("probability_matrix_mens.csv")
 
 totalsimulations=10000
 starttime=Sys.time()
