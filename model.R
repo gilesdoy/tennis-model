@@ -1,2 +1,2 @@
 library(tidyverse)
-draw<-data.frame(id=1:128,p1=NA,p2=NA)
+draw<-tibble(id=1:128,p1=NA,p2=NA,winner=NA,complete=0)
