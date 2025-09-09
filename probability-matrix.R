@@ -20,9 +20,10 @@ playermatrix <- expand.grid(p1 = draw$nameorder, p2=draw$nameorder, stringsAsFac
 ##df <- df[df$Name1 != df$Name2, ]
 playermatrix <- playermatrix[playermatrix$p1 != playermatrix$p2, ]
 
-# Remove duplicate permutations (e.g., A-B and B-A)
+# Remove duplicate permutations (e.g., A-B and B-A) (except actually, we want to keep them in)
 ##df_unique <- df[!duplicated(t(apply(df, 1, sort))), ]
-df <- playermatrix[!duplicated(t(apply(playermatrix, 1, sort))), ]
+##df <- playermatrix[!duplicated(t(apply(playermatrix, 1, sort))), ]
+df <- playermatrix
 
 # join the ranking data into it
 df <- left_join(df,rankings,by=c("p1"="name")) %>%
